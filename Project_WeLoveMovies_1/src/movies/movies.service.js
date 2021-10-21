@@ -2,7 +2,7 @@ const db = require("../db/connection");
 const mapProperties = require("../utils/map-properties");
 
 const addCritic = mapProperties({
-    critic_id: " critic.critic_id",
+    critic_id: "critic.critic_id",
     preferred_name: "critic.preferred_name",
     surname: "critic.surname",
     organization_name: "critic.organization_name",
