@@ -21,9 +21,10 @@ function destroy(reviewId) {
 }
 
 function update(reviewId, updatedReview){
+    const timeStamp = Date.now();
     return knex("reviews")
         .where({ review_id: reviewId})
-        .update(updatedReview);
+        .update({...updatedReview, updated_at: timeStamp});
 }
 
 function reviewWithCritic(reviewId) {

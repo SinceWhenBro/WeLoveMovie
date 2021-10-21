@@ -42,7 +42,10 @@ async function update(req, res) {
         ...req.body.data
     }
     await service.update(reviewId, updatedReview)
-    res.json({ data: await service.reviewWithCritic(reviewId) });
+    let data = await service.reviewWithCritic(reviewId)
+    data.updated_at = new Date(data.updated_at).toDateString();
+    data.created_at = "wwdjweqndwend"
+    res.json({ data });
 }
 
 module.exports = {
